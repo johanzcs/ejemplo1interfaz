@@ -21,4 +21,7 @@ return Modelo_vehiculo;
 public void setModelo_vehiculo (String Modelo_vehiculo){
 this.Modelo_vehiculo = Modelo_vehiculo;
 }
+ public void mostrarInfo(){
+    System.out.println("SERiAL    " + Serial_vehiculo +      "\nMODELO       " + Modelo_vehiculo);  
+}
 }
