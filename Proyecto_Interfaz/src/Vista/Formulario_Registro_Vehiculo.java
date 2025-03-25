@@ -177,13 +177,11 @@ public class Formulario_Registro_Vehiculo extends javax.swing.JFrame {
         
          Coche coche = new Coche();
     
-    // Asignar valores
     coche.setSerial_vehiculo(auxSereal);
     coche.setModelo_vehiculo(auxModelo);
     
-    // Validar campos
     if (validarCamposVehiculo(auxSereal, auxModelo, auxNumeroPuertas)) {
-        coche.mostrarInfo(); // Muestra la información del coche
+        coche.mostrarInfo(); 
         JOptionPane.showMessageDialog(this, "Registro de vehículo exitoso.", "Éxito", JOptionPane.INFORMATION_MESSAGE);
     } else {
         JOptionPane.showMessageDialog(this, "Error en el registro. Verifique los campos.", "Error", JOptionPane.ERROR_MESSAGE);
@@ -191,7 +189,6 @@ public class Formulario_Registro_Vehiculo extends javax.swing.JFrame {
 }
 
 private boolean validarCamposVehiculo(String serial, String modelo, String numeroPuertas) {
-    // Validar que el serial y modelo contengan solo números
     if (!serial.matches("[0-9]+") || !modelo.matches("[0-9]+")) {
         return false;
     }

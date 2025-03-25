@@ -4,9 +4,6 @@ package Vista;
 import Modelo.Usuario;
 public class Formulario_Registro_Cliente extends javax.swing.JFrame {
 
-    /**
-     * Creates new form Formulario_Registro_Cliente
-     */
     public Formulario_Registro_Cliente() {
         initComponents();
     }
@@ -171,33 +168,29 @@ public class Formulario_Registro_Cliente extends javax.swing.JFrame {
         String auxApellido = Apellido_cliente.getText();
         String auxCedula = Cedula_cliente.getText();
         
-        System.out.println("Nombre: " + auxNombre + ", Apellido: " + auxApellido + ", Cédula: " + auxCedula);
+        System.out.println("Nombre: " + auxNombre + ", Apellido: " + auxApellido + ", Cedula: " + auxCedula);
         
          if (validarCampos(auxNombre, auxApellido, auxCedula)) {
-        // Si la validación es correcta, mostrar mensaje de éxito
          Usuario usuario = new Usuario();
         usuario.setNombre_Cliente(auxNombre);
         usuario.setApellido_Cliente(auxApellido);
         usuario.setCedula_Cliente(auxCedula);
         JOptionPane.showMessageDialog(this, "Registro de cliente exitoso.", "Éxito", JOptionPane.INFORMATION_MESSAGE);
         
-        // Aquí puedes abrir el formulario de registro de vehículo
+        
         Formulario_Registro_Vehiculo registroVehiculo = new Formulario_Registro_Vehiculo();
         registroVehiculo.setVisible(true);
-        this.dispose(); // Cerrar el formulario de registro de cliente
+        this.dispose(); 
     } else {
-        // Si hay un error, mostrar mensaje de error
         JOptionPane.showMessageDialog(this, "Error en el registro. Verifique los campos.", "Error", JOptionPane.ERROR_MESSAGE);
     }
 }
 
 private boolean validarCampos(String nombre, String apellido, String cedula) {
-    // Validar que nombre y apellido solo contengan letras
     if (!nombre.matches("[a-zA-Z]+") || !apellido.matches("[a-zA-Z]+")) {
         return false;
     }
     
-    // Validar que la cédula contenga solo números
     if (!cedula.matches("[0-9]+")) {
         return false;
     }
@@ -205,7 +198,6 @@ private boolean validarCampos(String nombre, String apellido, String cedula) {
     return true;
 
                                                  
-        // TODO add your handling code here:
     }//GEN-LAST:event_RegistrosMousePressed
 
     /**
